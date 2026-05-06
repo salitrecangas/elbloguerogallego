@@ -1,1 +1,236 @@
 
+<!DOCTYPE html>
+<html lang="gl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Bloguero Gallego | Noticias del Morrazo</title>
+    <meta name="description" content="Noticias locales del Morrazo, Pontevedra. Cangas, Bueu, Moaña y toda la comarca.">
+    <meta name="keywords" content="noticias morrazo, cangas, bueu, moaña, pontevedra, galicia">
+    <meta name="author" content="El Bloguero Gallego">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="El Bloguero Gallego">
+    <meta property="og:description" content="Noticias frescas del Morrazo">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://elbloguerogallego.pages.dev">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📰</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Google Analytics (opcional, para estadísticas) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=GA_ID"></script> -->
+    
+    <style>
+        :root {
+            --primary: #1a4b5e;
+            --accent: #e8b951;
+            --bg: #f5f5f0;
+            --text: #2c3e50;
+            --footer-bg: #2c3e50;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+        }
+        .tagline {
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+        .noticias-grid {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            gap: 2rem;
+        }
+        .noticia-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+        .noticia-card:hover {
+            transform: translateY(-5px);
+        }
+        .noticia-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .noticia-content {
+            padding: 1.5rem;
+        }
+        .noticia-fecha {
+            color: #888;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .noticia-titular {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+            color: var(--primary);
+        }
+        .noticia-entradilla {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        .leer-mas {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        /* BANNER COOKIES */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--footer-bg);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            z-index: 1000;
+            font-size: 0.9rem;
+        }
+        .cookie-banner button {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .cookie-banner a {
+            color: var(--accent);
+        }
+        
+        /* FOOTER LEGAL */
+        footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 3rem 2rem 6rem;
+        }
+        .footer-content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .footer-section h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .footer-section a {
+            color: #aaa;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .footer-section a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            color: #888;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>🗞️ El Bloguero Gallego</h1>
+        <p class="tagline">Noticias frescas del Morrazo, Pontevedra</p>
+    </header>
+    
+    <!-- NOTICIAS -->
+    <main class="noticias-grid" id="noticias">
+        <!-- Las noticias se insertan aquí automáticamente desde Make -->
+    </main>
+    
+    <!-- FOOTER LEGAL -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>El Bloguero Gallego</h4>
+                <p style="color: #aaa; font-size: 0.9rem;">
+                    Medio digital independiente con información local del Morrazo y comarca de Pontevedra.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <a href="aviso-legal.html">Aviso Legal</a>
+                <a href="privacidad.html">Política de Privacidad</a>
+                <a href="cookies.html">Política de Cookies</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <a href="mailto:info@elbloguerogallego.com">info@elbloguerogallego.com</a>
+                <p style="color: #aaa; font-size: 0.9rem; margin-top: 0.5rem;">
+                    Cangas do Morrazo, Pontevedra
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 El Bloguero Gallego. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="aviso-legal.html" style="color: #888;">Aviso Legal</a> | 
+                <a href="privacidad.html" style="color: #888;">Privacidad</a> | 
+                <a href="cookies.html" style="color: #888;">Cookies</a>
+            </p>
+        </div>
+    </footer>
+    
+    <!-- BANNER COOKIES (OBLIGATORIO EN ESPAÑA) -->
+    <div class="cookie-banner" id="cookieBanner">
+        <span>
+            Utilizamos cookies para mejorar tu experiencia. 
+            <a href="cookies.html">Más información</a>
+        </span>
+        <button onclick="aceptarCookies()">Aceptar</button>
+    </div>
+    
+    <script>
+        // Gestión de cookies
+        function aceptarCookies() {
+            localStorage.setItem('cookies-aceptadas', 'true');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+        
+        if (localStorage.getItem('cookies-aceptadas')) {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
